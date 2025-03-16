@@ -1,48 +1,3 @@
-class Robot:
-    """
-    Represents a robot capable of moving, picking up, and delivering packages in the warehouse.
-    """
-    def __init__(self, robot_id, position):
-        """
-        Initializes the robot.
-
-        :param robot_id: Identifier of the robot.
-        :param position: Position of the robot in the warehouse.
-        """
-        self.id = robot_id
-        self.position = position
-        self.package = None # The package currently carried by the robot
-
-    def move(self, destination):
-        """
-        Moves the robot to a new location.
-
-        :param destination: Target location.
-        """
-        print(f"{self.id} moves from {self.position} to {destination}.")
-        self.position = destination
-
-    def pick_up(self, package):
-        """
-        Assigns a package to the robot.
-
-        :param package: Package identifier.
-        """
-        self.package = package
-        print(f"{self.id} picks up {package}.")
-
-    def drop_off(self):
-        """
-        Removes the package from the robot after delivery.
-        """
-        if self.package:
-            print(f"{self.id} drops off {self.package}.")
-            package = self.package
-            self.package = None
-            return package
-        return None
-
-
 class Warehouse:
     """
     Represents an automated warehouse with shelves, exit zones, and a planning system for package delivery.
@@ -131,13 +86,3 @@ class Warehouse:
         # Step 4: Drop off package
         if self.drop_off(robot_id, destination):
             print(f"{robot_id} successfully delivered {package} to {destination}.")
-
-# Initialize warehouse with a package on a shelf and an exit zone
-warehouse = Warehouse({"S3": ["P1"]}, ["Z1"])
-
-# Create and add a robot
-robot = Robot("R1", "S0")
-warehouse.add_robot(robot)
-
-# Execute the delivery plan
-warehouse.plan_delivery("R1", "P1", "Z1")
