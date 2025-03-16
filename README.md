@@ -13,3 +13,8 @@ Using **formal action representation**, this system applies fundamental principl
 - **Sequential action planning**
 - **Goal-oriented behavior**
 - **Task automation and execution**
+
+## Useful Link
+
+For a detailed explanation of the theoretical background, refer to the full **project report**:   
+https://docs.google.com/document/d/1QpJ-g7IvNqcOYFV8nfJEVleSZPWftVQpWtAykLFyf9g/edit?usp=sharing
